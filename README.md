@@ -7,7 +7,7 @@
 * Posteriormente, dirigirse a la carpeta `/models`, identificar el modelo recién entrenado
 
 ## Serving/Inference (Falta por implementar)
-* Podemos iniciar el servidor para las predicciones con `uvicorn serve.predict:app --reload` .
+* Podemos iniciar el servidor para las predicciones con `uvicorn server.app:app --reload` .
 * Podemos rquerir una prediccion mandando un `POST` (se puede usar Postman) a la url http://127.0.0.1:8000/prediction con un JSON en el Body en el siguiente formato:
 ```
 {
@@ -29,8 +29,8 @@
 ## Lista de Logs
 | Path          | Description   | Severity   |
 | ------------- | ------------- | ------------- |
-| `titanic/serve/predict.py`  | Log para registrar para el modelo: id, version, datos de entrada, datos procesados y prediccion. Para el sistema: timepo de ejecución y memoria utilizada. | INFO |
-| `titanic/serve/predict.py`  | Carga del modelo | CRITICAL |
+| `titanic/server/app.py`  | Log para registrar para el modelo: id, version, datos de entrada, datos procesados y prediccion. Para el sistema: timepo de ejecución y memoria utilizada. | INFO |
+| `titanic/server/app.py`  | Carga del modelo | CRITICAL |
 * 
 
 ## Opcional
