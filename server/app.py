@@ -6,11 +6,15 @@ import pydantic
 import pandas as pd
 
 # Logging setup
-logging.basicConfig(filename=os.path.abspath('./logs/api.log'), level=logging.INFO, 
+logging.basicConfig(filename=os.path.abspath('./logs/api.log'), level=[logging.INFO, logging.CRITICAL], 
                     format='%(asctime)s - %(levelname)s - %(message)s')
 
 # ML model setup
-model = joblib.load(os.path.abspath('./models/model.sav'))
+def load_model():
+    model = joblib.load(os.path.abspath('./models/model.sav'))
+    logging.CRITICAL("Model loaded")
+    return model
+
 class PredInput(pydantic.BaseModel):
     pclass:int
     name:str
@@ -43,6 +47,10 @@ async def root():
 
 @app.post('/predict')
 async def predict_survivor(input:PredInput) -> PredOutput:
+    model = load_model()
     X = input_formater(input).drop(columns=['index','home_dest'])
-    return {'prediction_class': model.predict(X),
+    pred = model.predict(X)
+    logging.info(f"Input de la predicción es {X}")
+    logging.info(f"La prediccion es {pred}")
+    return {'prediction_class': pred,
             'type_of_model': 'LogisticRegressor'}
