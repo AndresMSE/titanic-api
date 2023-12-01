@@ -1,0 +1,8 @@
+2023-12-01 16:17:22,057 - CRITICAL - Model loaded
+2023-12-01 16:17:22,072 - INFO - Input de la predicción es [[1 'Allen, Miss. Elisabeth Walton' 29.0 0 0 '24160' 211.3375 '2' nan 0.0
+  0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 1.0 0.0 0.0 0.0 0 0 0 0 0]]
+2023-12-01 16:17:22,072 - INFO - La prediccion es 1
+2023-12-01 16:17:47,290 - CRITICAL - Model loaded
+2023-12-01 16:17:47,304 - INFO - Input de la predicción es [[1 'Stark, Mr. Eddard' 43.0 0 0 '24160' 211.3375 '2' nan 1.0 0.0 0.0 0.0
+  0.0 0.0 0.0 0.0 1.0 0.0 1.0 0.0 0.0 0 0 0 0 0]]
+2023-12-01 16:17:47,304 - INFO - La prediccion es 0
