@@ -12,7 +12,7 @@ def train_model():
 def test_train_model(type_of_model,status):
     train(model_name=type_of_model)
     try:
-        model = joblib.load(os.path.abspath('./models/model.sav'))
+        model = joblib.load(os.path.abspath('../models/model.sav'))
         resultado = True
     except FileNotFoundError:
         resultado = False
@@ -57,7 +57,7 @@ def model_predict():
 
 @pytest.mark.parametrize('X_vars, status',model_predict())
 def test_model_predict(X_vars,status):
-    model = joblib.load(os.path.abspath('./models/model.sav'))
+    model = joblib.load(os.path.abspath('../models/model.sav'))
     try:
         prediction = model.predict(X_vars)
         if type(prediction[0])==np.int64:
